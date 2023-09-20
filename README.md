@@ -4,6 +4,7 @@ LSL server for Emotiv EPOC X
 Original code taken from [CyKit](https://github.com/CymatiCorp/CyKit) 
 
 ### Usage
+Connect dongle, turn on the headset, wait for the light from two indicators
 ```
 ... download and clone repo
 pipenv install & pipenv shell
