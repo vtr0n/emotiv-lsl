@@ -11,9 +11,7 @@ python -m pipenv install
 ```
 
 ### Usage
-
-Connect device via dongle
-
+Connect dongle, turn on the headset, wait for the light from two indicators
 ```
 # frist terminal
 python -m pipenv run python main.py
