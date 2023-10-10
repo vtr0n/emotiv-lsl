@@ -1,23 +1,47 @@
 # emotiv-lsl
 
 LSL server for Emotiv EPOC X  
-Original code taken from [CyKit](https://github.com/CymatiCorp/CyKit) 
+Original code taken from [CyKit](https://github.com/CymatiCorp/CyKit)
+
+### Dependencies
+
+```
+pip install pipenv
+python -m pipenv install
+```
 
 ### Usage
+
+Connect device via dongle
+
 ```
-... download and clone repo
-pipenv install & pipenv shell
-python main.py # start lsl server
+# frist terminal
+python -m pipenv run python main.py
 ```
-Then you can use any lsl client, for example [bsl]([bsl](https://github.com/bsl-tools/bsl))
+
+Then you can use any lsl client, for example [bskl](https://github.com/bsl-tools/bsl)
+
 ```
 bsl_stream_viewer
 ```
+
 ![Alt text](images/bsl_stream_viewer.png)
 
+Or use examples/read_data.py to get raw data
+
+```
+# second terminal
+python -m pipenv run python examples/read_data.py
+```
+
+### Config
+
+Change device sampling rate in config.py and emotiv app
 
 ### Examples
+
 Get raw data:
+
 ```
 python main.py & # start lsl server
 python examples/read_data.py # get raw data
@@ -26,7 +50,9 @@ python examples/read_data.py # get raw data
 [4164.615234375, 4316.02587890625, 4255.384765625, 4312.3076171875, 4398.0771484375, 4350.12841796875, 4376.15380859375, 4552.94873046875, 4513.97412109375, 4430.8974609375, 4375.384765625, 5063.7177734375, 4275.384765625, 4225.0] 104573.464060118
 [4177.94873046875, 4321.66650390625, 4261.794921875, 4313.46142578125, 4397.1796875, 4347.05126953125, 4373.58984375, 4551.66650390625, 4521.2822265625, 4436.794921875, 4378.7177734375, 5060.76904296875, 4283.7177734375, 4232.8203125] 104573.472085895
 ```
+
 Write raw data via mne to .fif:
+
 ```
 python main.py & # start lsl server
 python examples/read_and_export_mne.py # write raw data to fif file

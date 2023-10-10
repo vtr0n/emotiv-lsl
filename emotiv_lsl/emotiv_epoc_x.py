@@ -3,6 +3,7 @@ from Crypto.Cipher import AES
 from pylsl import StreamInfo
 
 from emotiv_lsl.emotiv_base import EmotivBase
+from config import SRATE
 
 
 class EmotivEpocX(EmotivBase):
@@ -32,9 +33,8 @@ class EmotivEpocX(EmotivBase):
         ch_names = ['AF3', 'F7', 'F3', 'FC5', 'T7', 'P7',
                     'O1', 'O2', 'P8', 'T8', 'FC6', 'F4', 'F8', 'AF4']
         n_channels = len(ch_names)
-        srate = 128
 
-        info = StreamInfo('Epoc X', 'EEG', n_channels, srate, 'float32')
+        info = StreamInfo('Epoc X', 'EEG', n_channels, SRATE, 'float32')
         chns = info.desc().append_child("channels")
         for label in ch_names:
             ch = chns.append_child("channel")
