@@ -5,6 +5,8 @@ from mne import Info, create_info
 from mne.io.array import RawArray
 from pylsl import StreamInlet, resolve_stream
 
+from config import SRATE
+
 
 def get_info() -> Info:
     ch_names = ['AF3', 'F7', 'F3', 'FC5', 'T7', 'P7',
@@ -29,7 +31,7 @@ def main():
 
     buffer = []
     while True:
-        if len(buffer) == 128 * 5:  # 5 seconds
+        if len(buffer) == 128 * 5:  # wait 5 seconds
             break
 
         sample, _ = inlet.pull_sample()
