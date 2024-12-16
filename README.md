@@ -11,6 +11,7 @@ python -m pipenv install
 ```
 
 ### Usage
+Disable the motion data in Emotiv app settings  
 Connect dongle, turn on the headset, wait for the light from two indicators
 ```
 # frist terminal
